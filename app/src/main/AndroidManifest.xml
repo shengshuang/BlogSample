@@ -23,7 +23,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".BaseActivity"/>
+
         <activity android:name=".nested.NestedScrollActivity"/>
+
+        <activity android:name=".drag.ViewDragActivity"/>
 
     </application>
 

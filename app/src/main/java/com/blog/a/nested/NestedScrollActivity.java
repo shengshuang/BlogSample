@@ -18,6 +18,9 @@ import com.tencent.tencentmap.mapsdk.maps.MapView;
 
 import java.util.ArrayList;
 
+/**
+ * 嵌套滑动效果类。
+ */
 public class NestedScrollActivity extends AppCompatActivity {
     static final String LOG_TAG = "tag";
     // 腾讯地图

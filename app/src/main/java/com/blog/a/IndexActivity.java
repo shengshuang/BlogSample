@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blog.a.nested.NestedScrollActivity;
+import com.blog.a.drag.ViewDragActivity;
 
 import java.util.ArrayList;
 
 public class IndexActivity extends BaseActivity {
 
     private static final int NESTED1_SCROLL = 0;
+    private static final int DRAG_HELPER = 1;
 
     public interface IClickItemListener {
         void onClick(int itemPosition);
@@ -27,14 +29,16 @@ public class IndexActivity extends BaseActivity {
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(new SimpleAdapter((int itemPosition)
-                -> clickItem(itemPosition), getExamples()));
+        recyclerView.setAdapter(new SimpleAdapter(this::clickItem, getExamples()));
     }
 
     private void clickItem(int itemPosition) {
         switch (itemPosition){
             case NESTED1_SCROLL:
                 toIntent(NestedScrollActivity.class);
+                break;
+            case DRAG_HELPER:
+                toIntent(ViewDragActivity.class);
                 break;
             default:
                 break;
@@ -44,6 +48,7 @@ public class IndexActivity extends BaseActivity {
     private ArrayList<String> getExamples() {
         ArrayList<String> examples = new ArrayList<>();
         examples.add("嵌套滑动栗子");
+        examples.add("ViewDragHelper栗子");
         return examples;
     }
 
