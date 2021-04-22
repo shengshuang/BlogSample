@@ -2,6 +2,7 @@ package com.blog.a;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ public class IndexActivity extends BaseActivity {
 
     private static final int NESTED1_SCROLL = 0;
     private static final int DRAG_HELPER = 1;
+    private static final int OVER_SCROLL_RECYCLER = 2;
 
     public interface IClickItemListener {
         void onClick(int itemPosition);
@@ -40,6 +42,9 @@ public class IndexActivity extends BaseActivity {
             case DRAG_HELPER:
                 toIntent(ViewDragActivity.class);
                 break;
+            case OVER_SCROLL_RECYCLER:
+                Toast.makeText(this, "当前页带回弹效果!", Toast.LENGTH_SHORT).show();
+                break;
             default:
                 break;
         }
@@ -49,6 +54,7 @@ public class IndexActivity extends BaseActivity {
         ArrayList<String> examples = new ArrayList<>();
         examples.add("嵌套滑动栗子");
         examples.add("ViewDragHelper栗子");
+        examples.add("回弹效果RecyclerView");
         return examples;
     }
 
