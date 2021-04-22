@@ -35,7 +35,7 @@ CompNsViewGroup的XML内用法如下，NestedViewGroup内部包含顶部地图Ma
     </com.blog.a.nested.NestedViewGroup>
 ```
 
-这是demo效果，[我的博客地址](https://juejin.cn/post/6951069336412880933)。
+这是demo效果，[具体看我博客](https://juejin.cn/post/6951069336412880933)。
 
 <p align="left">
   <img width="260" height="503" src="https://img-blog.csdnimg.cn/20210115193238444.gif">
@@ -44,8 +44,27 @@ CompNsViewGroup的XML内用法如下，NestedViewGroup内部包含顶部地图Ma
 ## ViewDragHelper
 
 这是demo实现效果，可自由拖拽的view，不需要自己再造轮子啦，使用系统androidx包（原v4）下的ViewDragHelper 几行代码即可搞定。
-[我的博客地址](https://juejin.cn/post/6952062595767468039)。
+[具体看我博客](https://juejin.cn/post/6952062595767468039)。
 
 <p align="left">
   <img width="260" height="231" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e96c59a64544466aba3f8aa95605e6e4~tplv-k3u1fbpfcp-watermark.image">
+</p>
+
+### 回弹效果RecyclerView
+
+OverScrollRecyclerView可以下拉回弹，也可以上拉回弹，其是RecyclerView的子类，并实现了OnTouchListener方法，其用法与RecyclerView一样：
+
+```java
+    <com.blog.a.recycler.OverScrollRecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        />
+```
+
+这是demo效果，[具体看我博客](https://juejin.cn/post/6953640372467662879)。
+
+<p align="left">
+  <img width="260" height="503" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/df7e8e06a45d40a88d43321e23cd2726~tplv-k3u1fbpfcp-watermark.image">
 </p>
