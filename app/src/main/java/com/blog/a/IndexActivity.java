@@ -1,65 +1,38 @@
 package com.blog.a;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.blog.a.nested.NestedScrollActivity;
-import com.blog.a.drag.ViewDragActivity;
-
-import java.util.ArrayList;
-
-public class IndexActivity extends BaseActivity {
-
-    private static final int NESTED1_SCROLL = 0;
-    private static final int DRAG_HELPER = 1;
-    private static final int OVER_SCROLL_RECYCLER = 2;
-
-    public interface IClickItemListener {
-        void onClick(int itemPosition);
-    }
+public class IndexActivity extends BaseActivity implements SimpleAdapter.ViewHolderListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index_layout);
-        RecyclerView recyclerView = findViewById(R.id.rv_list);
 
+        RecyclerView recyclerView = findViewById(R.id.rv_list);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(new SimpleAdapter(this::clickItem, getExamples()));
+        recyclerView.setAdapter(new SimpleAdapter(IndexItem.ITEMS, this));
     }
 
-    private void clickItem(int itemPosition) {
-        switch (itemPosition){
-            case NESTED1_SCROLL:
-                toIntent(NestedScrollActivity.class);
-                break;
-            case DRAG_HELPER:
-                toIntent(ViewDragActivity.class);
-                break;
-            case OVER_SCROLL_RECYCLER:
-                Toast.makeText(this, "当前页带回弹效果!", Toast.LENGTH_SHORT).show();
-                break;
-            default:
-                break;
+    @Override
+    public void onItemClicked(View view, int adapterPosition) {
+        final Class cls = IndexItem.CLASS[adapterPosition];
+        if (null == cls) {
+            Toast.makeText(this, "当前页带回弹效果!", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(this, cls);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+            }
         }
-    }
-
-    private ArrayList<String> getExamples() {
-        ArrayList<String> examples = new ArrayList<>();
-        examples.add("嵌套滑动栗子");
-        examples.add("ViewDragHelper栗子");
-        examples.add("回弹效果RecyclerView");
-        return examples;
-    }
-
-    private void toIntent(Class<? extends AppCompatActivity> c) {
-        Intent intent = new Intent(this, c);
-        startActivity(intent);
     }
 }

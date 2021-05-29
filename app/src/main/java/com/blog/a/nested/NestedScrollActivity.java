@@ -46,8 +46,7 @@ public class NestedScrollActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.inner_rv);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(new SimpleAdapter((int itemPosition) -> {},
-                getExamples()));
+        recyclerView.setAdapter(new SimpleAdapter(getExamples(), null));
 
         // 如果存在固定TitleBar, 可通过marginTop设置NestedViewGroup位置
 
@@ -80,11 +79,10 @@ public class NestedScrollActivity extends AppCompatActivity {
         }
     }
 
-    private ArrayList<String> getExamples() {
-        ArrayList<String> examples = new ArrayList<>();
+    private String[] getExamples() {
+        String[] examples = new String[20];
         for (int i = 0; i < 20; i++) {
-            String content = "第" + i + "项";
-            examples.add(content);
+            examples[i] = "第" + i + "项";
         }
         return examples;
     }
