@@ -1,7 +1,7 @@
 package com.blog.a;
 
 import com.blog.a.activitytransition.IndexActivity;
-import com.blog.a.anim.AnimActivity;
+import com.blog.a.anim.VectorAnimActivity;
 import com.blog.a.drag.ViewDragActivity;
 import com.blog.a.nested.NestedScrollActivity;
 
@@ -19,8 +19,16 @@ public class IndexItem {
             NestedScrollActivity.class,
             ViewDragActivity.class,
             null,
-            AnimActivity.class,
+            VectorAnimActivity.class,
             IndexActivity.class
+    };
+
+    static final String[] TOAST = new String[] {
+            "",
+            "",
+            "当前页带回弹效果!",
+            "",
+            ""
     };
 
 }

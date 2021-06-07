@@ -27,7 +27,7 @@ public class IndexActivity extends BaseActivity implements SimpleAdapter.ViewHol
     public void onItemClicked(View view, int adapterPosition) {
         final Class cls = IndexItem.CLASS[adapterPosition];
         if (null == cls) {
-            Toast.makeText(this, "当前页带回弹效果!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, IndexItem.TOAST[adapterPosition], Toast.LENGTH_SHORT).show();
         } else {
             Intent intent = new Intent(this, cls);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
