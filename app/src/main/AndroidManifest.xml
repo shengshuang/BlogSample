@@ -28,6 +28,7 @@
         <activity android:name=".anim.VectorAnimActivity"/>
         <activity android:name=".activitytransition.IndexActivity"/>
         <activity android:name=".activitytransition.DetailActivity"/>
+        <activity android:name=".anim.LottieActivity"/>
 
     </application>
 
