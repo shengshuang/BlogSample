@@ -14,7 +14,7 @@ public class IndexItem {
             "回弹效果RecyclerView",
             "矢量可绘制对象",
             "Activity过渡动画",
-            "Lottie"
+            "Lottie动画"
     };
 
     static final Class[] CLASS = new Class[] {
