@@ -1,70 +1,13 @@
-## 嵌套滑动
+## 相关博客
 
-CompNsViewGroup的XML内用法如下，NestedViewGroup内部包含顶部地图MapView和滑动布局LinearLayout，而LinearLayout布局的内部即我们常用的滑动控件RecyclerView，这里为何还要加层 LinearLayout呢？这样做的好处是，我们可以更好的适配不同滑动控件，而不仅仅是将CompNsViewGroup与RecyclerView耦合住。
+[1、事件分发从手写一个嵌套滑动框架开始](https://juejin.cn/post/6951069336412880933)
 
-```java
-    <com.blog.a.nested.NestedViewGroup
-        android:id="@+id/dd_view_group"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        didi:header_id="@+id/t_map_view"
-        didi:target_id="@+id/target_layout"
-        didi:inn_id="@+id/inner_rv"
-        didi:header_init_top="0"
-        didi:target_init_bottom="250">
+[2、强大的可拖拽工具类ViewDragHelper](https://juejin.cn/post/6952062595767468039)
 
-        <com.tencent.tencentmap.mapsdk.maps.MapView
-            android:id="@+id/t_map_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+[3、自定义一个超顺滑的回弹RecyclerView](https://juejin.cn/post/6953640372467662879)
 
-        <LinearLayout
-            android:id="@+id/target_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#fff">
+[4、矢量可绘制对象](https://juejin.cn/post/6960299758711734309)
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/inner_rv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+[5、Activity 的过渡动画你会使用吗？](https://juejin.cn/post/6967780868631429133)
 
-        </LinearLayout>
-
-    </com.blog.a.nested.NestedViewGroup>
-```
-
-这是demo效果，[具体看我博客](https://juejin.cn/post/6951069336412880933)。
-
-<p align="left">
-  <img width="260" height="503" src="https://img-blog.csdnimg.cn/20210115193238444.gif">
-</p>
-
-## ViewDragHelper
-
-这是demo实现效果，可自由拖拽的view，不需要自己再造轮子啦，使用系统androidx包（原v4）下的ViewDragHelper 几行代码即可搞定。
-[具体看我博客](https://juejin.cn/post/6952062595767468039)。
-
-<p align="left">
-  <img width="260" height="231" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e96c59a64544466aba3f8aa95605e6e4~tplv-k3u1fbpfcp-watermark.image">
-</p>
-
-### 回弹效果RecyclerView
-
-OverScrollRecyclerView可以下拉回弹，也可以上拉回弹，其是RecyclerView的子类，并实现了OnTouchListener方法，其用法与RecyclerView一样：
-
-```java
-    <com.blog.a.recycler.OverScrollRecyclerView
-        android:id="@+id/rv_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff"
-        />
-```
-
-这是demo效果，[具体看我博客](https://juejin.cn/post/6953640372467662879)。
-
-<p align="left">
-  <img width="260" height="503" src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/df7e8e06a45d40a88d43321e23cd2726~tplv-k3u1fbpfcp-watermark.image">
-</p>
+[6、Lottie是如何解放了开发的双手？](https://juejin.cn/post/6972947515641430024)
