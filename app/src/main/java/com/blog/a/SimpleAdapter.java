@@ -57,7 +57,9 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder
 
         @Override
         public void onClick(View view) {
-            viewHolderListener.onItemClicked(view, getAdapterPosition());
+            if (null != viewHolderListener) {
+                viewHolderListener.onItemClicked(view, getAdapterPosition());
+            }
         }
     }
 }

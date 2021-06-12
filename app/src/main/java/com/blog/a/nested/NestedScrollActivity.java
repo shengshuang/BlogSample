@@ -16,8 +16,6 @@ import com.blog.a.SimpleAdapter;
 import com.blog.a.utils.CommonUtils;
 import com.tencent.tencentmap.mapsdk.maps.MapView;
 
-import java.util.ArrayList;
-
 /**
  * 嵌套滑动效果类。
  */
@@ -32,13 +30,12 @@ public class NestedScrollActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 无标题栏情况
-        //requestNoTitle(this);
+        requestNoTitle(this);
         setContentView(R.layout.nested_scroll_layout);
         mapView = findViewById(R.id.t_map_view);
         myToolbar = findViewById(R.id.my_toolbar);
         myToolbar.setTitle("嵌套滑动Toolbar");
         myToolbar.getBackground().setAlpha(0);
-        setSupportActionBar(myToolbar);
         init();
     }
 
