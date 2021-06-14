@@ -12,7 +12,24 @@ android {
         versionCode 1
         versionName "1.0"
 
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main() {
+            jniLibs.srcDirs = ['src/main/java/com/blog/a/libs']
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "src/main/java/com/blog/a/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
     }
 
     buildTypes {

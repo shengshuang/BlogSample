@@ -4,6 +4,7 @@ import com.blog.a.activitytransition.IndexActivity;
 import com.blog.a.anim.LottieActivity;
 import com.blog.a.anim.VectorAnimActivity;
 import com.blog.a.drag.ViewDragActivity;
+import com.blog.a.jni.JNISampleActivity;
 import com.blog.a.nested.NestedScrollActivity;
 
 public class IndexItem {
@@ -14,7 +15,8 @@ public class IndexItem {
             "回弹效果RecyclerView",
             "矢量可绘制对象",
             "Activity过渡动画",
-            "Lottie动画"
+            "Lottie动画",
+            "Jni Sample"
     };
 
     static final Class[] CLASS = new Class[] {
@@ -23,13 +25,15 @@ public class IndexItem {
             null,
             VectorAnimActivity.class,
             IndexActivity.class,
-            LottieActivity.class
+            LottieActivity.class,
+            JNISampleActivity.class
     };
 
     static final String[] TOAST = new String[] {
             "",
             "",
             "当前页带回弹效果!",
+            "",
             "",
             "",
             ""
