@@ -5,7 +5,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.Explode;
-import android.transition.Fade;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -21,7 +20,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 
-import com.blog.a.BaseActivity;
 import com.blog.a.R;
 import com.squareup.picasso.Picasso;
 
